@@ -1,0 +1,136 @@
+================================================================================
+HOW TO DOWNLOAD AND RUN "IntelligentLibrarySystem_Portable.zip"
+FROM GITHUB ON YOUR SECOND LAPTOP
+================================================================================
+
+--------------------------------------------------------------------------------
+STEP 1: DOWNLOAD THE ZIP FILE FROM GITHUB ON YOUR SECOND LAPTOP
+--------------------------------------------------------------------------------
+1. Open your web browser on your second laptop.
+2. Go to your GitHub repository where you uploaded the zip file.
+3. Click on the file:
+     IntelligentLibrarySystem_Portable.zip
+4. Click the "Download" button (or "Download raw file").
+5. The zip file will be saved to your "Downloads" or "Desktop" folder.
+
+
+--------------------------------------------------------------------------------
+STEP 2: EXTRACT THE ZIP FILE
+--------------------------------------------------------------------------------
+1. Find the downloaded "IntelligentLibrarySystem_Portable.zip" file.
+2. Right-click on it and choose "Extract All...".
+3. Choose where you want to extract it (e.g., your Desktop or C:\Projects).
+4. Click "Extract".
+5. Open the extracted folder:
+     IntelligentLibrarySystem
+
+   CHECKPOINT:
+   Inside this folder, you should directly see:
+     app.py
+     config.py
+     requirements.txt
+     setup_and_run.bat
+     database/
+     models/
+     routes/
+     templates/
+     static/
+
+
+--------------------------------------------------------------------------------
+STEP 3: RUN THE APPLICATION
+--------------------------------------------------------------------------------
+
+>>> OPTION A: THE EASIEST METHOD (ONE-CLICK LAUNCHER - NO TYPING!) <<<
+1. Inside the extracted "IntelligentLibrarySystem" folder, locate:
+     setup_and_run.bat
+2. Simply double-click "setup_and_run.bat"!
+3. It will automatically:
+   - Check if Python is installed.
+   - Create a clean virtual environment ("venv").
+   - Install all required libraries from requirements.txt.
+   - Initialize the SQLite database and seed 24 books + demo accounts.
+   - Launch the website and automatically open http://127.0.0.1:5000 in your browser!
+
+
+>>> OPTION B: USING WINDOWS COMMAND PROMPT (cmd.exe) <<<
+1. Open "Command Prompt" (cmd.exe).
+2. Navigate into your extracted folder:
+     cd C:\path\to\IntelligentLibrarySystem
+     (Example: cd C:\Users\YourName\Desktop\IntelligentLibrarySystem)
+
+3. Run these commands one by one:
+     python -m venv venv
+     venv\Scripts\activate.bat
+     pip install -r requirements.txt
+     python seed.py
+     python app.py
+
+4. Open your web browser and go to:
+     http://127.0.0.1:5000
+
+
+>>> OPTION C: USING WINDOWS POWERSHELL <<<
+1. Open "PowerShell".
+2. Navigate into your extracted folder:
+     cd C:\path\to\IntelligentLibrarySystem
+     (Example: cd C:\Users\YourName\Desktop\IntelligentLibrarySystem)
+
+3. Run these commands:
+     python -m venv venv
+     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+     .\venv\Scripts\Activate.ps1
+     pip install -r requirements.txt
+     python seed.py
+     python app.py
+
+4. Open your web browser and go to:
+     http://127.0.0.1:5000
+
+
+--------------------------------------------------------------------------------
+STEP 4: LOGIN CREDENTIALS FOR YOUR PRESENTATION / VIVA
+--------------------------------------------------------------------------------
+When the website loads at http://127.0.0.1:5000:
+
+1. ADMINISTRATOR / LIBRARIAN:
+   - Email:    admin@library.edu
+   - Password: Admin@123
+   - Showcase: Operations Dashboard with Chart.js charts, Book Inventory CRUD,
+               Approve / Reject Student Requests, Issue Books, Record Returns,
+               Automatic Overdue Fine Calculation (Rs. 5/day).
+
+2. STUDENT (WITH AI RECOMMENDATIONS & HISTORY):
+   - Email:    rahul@student.edu
+   - Password: Student@123
+   - Showcase: Personalized Top-5 Recommendations based on AI/ML borrow history
+               (TF-IDF & Cosine Similarity), Book Catalogue Search & Filter,
+               "My Loans" Ledger with Due Date Warnings, Submit Ratings & Reviews.
+
+*(TIP: On the login page, you can click the "Fill Admin" or "Fill Student"
+buttons to automatically fill in the login credentials with one click).*
+
+
+--------------------------------------------------------------------------------
+STEP 5: TROUBLESHOOTING COMMON WINDOWS ISSUES ON A NEW LAPTOP
+--------------------------------------------------------------------------------
+PROBLEM 1: "'python' is not recognized as an internal or external command"
+SOLUTION:  Python is not added to the Windows PATH.
+           Download and install Python 3.10+ from https://www.python.org/
+           IMPORTANT: During installation, check the box:
+           [x] "Add Python to PATH" before clicking Install.
+
+PROBLEM 2: PowerShell displays "running scripts is disabled on this system"
+SOLUTION:  Run this command in PowerShell before activating:
+           Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+           Then run: .\venv\Scripts\Activate.ps1 again.
+
+PROBLEM 3: How to run tests to show professors the code is 100% verified?
+SOLUTION:  In Command Prompt or PowerShell with venv activated, run:
+           python -m pytest -v
+           All 24 unit tests will execute and pass.
+
+
+================================================================================
+END OF GUIDE - SmartLib AI
+================================================================================
